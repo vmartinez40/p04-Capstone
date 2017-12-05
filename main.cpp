@@ -11,27 +11,42 @@ Things to do
 
 #include <string>
 #include <iostream>
-#include <filestream>
+//#include <filestream>
 #include <ctime>
+#include "message.h"
 
-using namespace std;
-
-//Prototypes 
-
-//Greeting
-void greeting();
-//Display 3 options Play(Again?), Rules, and Quit and return bool (might be a class?)
-bool menuOptions();
+bool endOrPlay(int);
 
 int main()
 {
+    bool gameOver = false;
+    message game;
+
+    endOrPlay(game.greeting());   
+    if(gameOver == false)
+    {
+        std::cout<<"Loading Mission!"<<std::endl;
+        //load txt file of instructions
+    }
+    if(gameOver == true)
+    {
+        return 0;
+    }
 
 
-
-
-
-
-return 0;
+    return 0;
 }
 
-
+bool endOrPlay(int outcome)
+{
+    bool gameOver = false;
+    if(outcome == 1)
+    {
+        gameOver = false;
+    }
+    else if(outcome == 2)
+    {
+        gameOver = true;
+    }
+    return gameOver;
+}
