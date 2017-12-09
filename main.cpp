@@ -30,13 +30,13 @@ int main()
     srand( time(NULL) );
     bool startGame = endOrStartGame(game.greeting());   
     bool gameOver;
-        if(startGame == false)
+        if(startGame == true)
         {
         std::cout<<"Loading Mission!"<<std::endl;
         playGame();
 
         }
-        else if(startGame == true)
+        else if(startGame == false)
         {
             std::cout<<"Abandoning Mission!"<<std::endl;
             return 0;
