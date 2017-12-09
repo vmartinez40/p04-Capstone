@@ -4,49 +4,62 @@ Things to do
 2)Have 3 options (Play(Again?), Rules, and Quit)
 3)Display a map of hits you made and if you hit any ships(make into class)
 4)Randomly generate different size ships (1,2,3,4) and if they are vertical or horizontal(make into class)
-5)
+5)High score load up high score file then check if its the highest score (pass by reference)
+updating highscore.
 
 
 */
 
 #include <string>
 #include <iostream>
-//#include <filestream>
+#include <vector>
+#include <fstream>
 #include <ctime>
+#include <cstdlib>
+#include "map.h"
 #include "message.h"
 
-bool endOrPlay(int);
+bool endOrStartGame(int);
+int playGame();
+
+message game;
+Map playerMap;
 
 int main()
 {
-    bool gameOver = false;
-    message game;
-
-    endOrPlay(game.greeting());   
-    if(gameOver == false)
-    {
+    srand( time(NULL) );
+    bool startGame = endOrStartGame(game.greeting());   
+    bool gameOver;
+        if(startGame == false)
+        {
         std::cout<<"Loading Mission!"<<std::endl;
-        //load txt file of instructions
-    }
-    if(gameOver == true)
-    {
-        return 0;
-    }
+        playGame();
 
-
-    return 0;
+        }
+        else if(startGame == true)
+        {
+            std::cout<<"Abandoning Mission!"<<std::endl;
+            return 0;
+        }
+        
 }
 
-bool endOrPlay(int outcome)
+bool endOrStartGame(int outcome)
 {
-    bool gameOver = false;
+    bool startGame = false;
     if(outcome == 1)
     {
-        gameOver = false;
+        startGame = true;
     }
     else if(outcome == 2)
     {
-        gameOver = true;
+        startGame = false;
     }
-    return gameOver;
+    return startGame;
+}
+
+int playGame()
+{
+    playerMap.playGame();
+    return 0;
 }

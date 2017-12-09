@@ -1,5 +1,5 @@
-#ifndef _MESSAGE_H
-#define _MESSAGE_H
+#ifndef _MESSAGE_H_
+#define _MESSAGE_H_
 
 #include <iostream>
 #include <string>
