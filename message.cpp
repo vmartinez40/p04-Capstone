@@ -34,49 +34,6 @@ int message::greeting()
         return choice;
 }
 
-int message::gameOverMessage()
-{
-        std::cout<<"Game Over!"<<std::endl;
-        std::cout<<"You failed to destroy the opposing sides Navy Fleet!"<<std::endl;
-        std::cout<<"Choose one of the options below!"<<std::endl;
-        std::cout<<"1) Play Battleship again!"<<std::endl;
-        std::cout<<"2) Exit program."<<std::endl;
-        std::cin>>choice;
-        choiceIsValid(choice);
-        while(validChoice == false)
-        {
-                std::cout<<"Invalid choice please try again."<<std::endl;
-                std::cin>>choice;
-                choiceIsValid(choice);
-                if(validChoice == true)
-                {
-                        break;
-                }
-        }
-        return choice;
-}
-
-int message::gameWonMessage()
-{
-        std::cout<<"Congratulations!"<<std::endl;
-        std::cout<<"You succeded in destroying the opposing sides Navy Fleet"<<std::endl;
-        std::cout<<"Choose one of the options below!"<<std::endl;
-        std::cout<<"1) Play Battleship again!"<<std::endl;
-        std::cout<<"2) Exit program."<<std::endl;
-        std::cin>>choice;
-        choiceIsValid(choice);
-        while(validChoice == true)
-        {
-                std::cout<<"Invalid choice please try again."<<std::endl;
-                std::cin>>choice;
-                choiceIsValid(choice);
-                if(validChoice == true)
-                {
-                        break;
-                }
-        }
-        return choice;
-}
 
 
 

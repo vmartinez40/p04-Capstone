@@ -6,7 +6,11 @@
 
 class message
 {
-    private:int choice; bool validChoice;
-    public:int greeting(); int gameOverMessage(); int gameWonMessage(); bool choiceIsValid(int);
+    private:
+    int choice; 
+    bool validChoice;
+    public:
+    int greeting(); 
+    bool choiceIsValid(int);
 };
 #endif
