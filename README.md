@@ -21,10 +21,10 @@ I use an else if statement here because in the case that the if statemnt above i
 
 ## Iteration
 
-[map.cpp lines 7-10](/map.cpp#L7)
+[map.cpp lines 17-20](/map.cpp#L17)
 I use a for loop here to fill in the droneMap matrix with empty spaces to later fill in with strings.
 
-[map.cpp lines 28-37](/map.cpp#L28)
+[map.cpp lines 38-47](/map.cpp#L38)
 I use a while loop here to make sure that only 15 drones are spawned into the map.
 
 ## Data Structure
