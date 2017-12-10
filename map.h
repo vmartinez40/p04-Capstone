@@ -11,11 +11,11 @@ class Map
         private:
         std::vector <std::vector <std::string> > droneMap; 
         std::vector <std::vector <std::string> > playerMap;
-        int numDrones = 15; 
-        int mapSize = 10;
-        bool gameIsOver = false;
-        int shotsLeft = 8;
-        int hits = 0;
+        int numDrones; 
+        int mapSize;
+        bool gameIsOver;
+        int shotsLeft;
+        int hits;
 
 
         public:
@@ -24,5 +24,8 @@ class Map
         void displayMap(std::vector <std::vector <std::string> >); 
         void updatePlayerMap(int, int);
         void playGame();
+        int highscore();
+        Map();
 };
 #endif
+

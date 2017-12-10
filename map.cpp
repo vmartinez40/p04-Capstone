@@ -1,5 +1,15 @@
 #include "map.h"
 
+Map::Map()
+{
+    numDrones = 15;
+    mapSize = 10;
+    gameIsOver = false;
+    shotsLeft = 8;
+    hits = 0;
+
+}
+
 void Map::createDroneMap()
 {
         droneMap.resize(mapSize);
@@ -99,27 +109,42 @@ void Map::playGame()
     createPlayerMap();
     std::cout<< "PlayerMap\n";
     displayMap(playerMap);
-    std::cout<< "DroneMap\n";
-    displayMap(droneMap);
     while(gameIsOver == false)
     {
         int cordX, cordY;
         std::cout<<"Insert X Cordinate\n";
         std::cin>>cordX;
+        while(cordX < 1 || cordX > 9)
+        {
+            std::cout<<"Invalid Cordinate!\n";
+            std::cin>>cordX;
+        }
         std::cout<<"Insert Y Cordinate\n";
         std::cin>>cordY;
+        while(cordY < 1 || cordY > 9)
+        {
+            std::cout<<"Invalid Cordinate!\n";
+            std::cin>>cordY;
+        }
         updatePlayerMap(cordX,cordY);
         if(hits == 15)
         {
             std::cout<<"You Win! Try Again?\n";
-            break;
+            gameIsOver = true;
         }
         if(shotsLeft == 0)
         {
             std::cout<<"You Lose! Try Again?\n";
-            break;
+            gameIsOver = true;
         }
-        std::cout<<"You have "<<shotsLeft<<" shots left!";
+        std::cout<<"You have "<<shotsLeft<<" shots left!"<<std::endl;
     }
-    
-}
+} 
+
+int Map::highscore()
+{
+    int score;
+    int hitScore = hits * 3;
+    score = hitScore;
+    return score;
+} 

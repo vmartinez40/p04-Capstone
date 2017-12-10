@@ -20,7 +20,8 @@ updating highscore.
 #include "message.h"
 
 bool endOrStartGame(int);
-int playGame();
+void playGame();
+void isNewHighScore(int & playerHighScore);
 
 message game;
 Map playerMap;
@@ -32,9 +33,11 @@ int main()
     bool gameOver;
         if(startGame == true)
         {
-        std::cout<<"Loading Mission!"<<std::endl;
-        playGame();
-
+            std::cout<<"Loading Mission!"<<std::endl;
+            playGame();
+            int playerHighScore = playerMap.highscore();
+            isNewHighScore(playerHighScore);
+            return 0;
         }
         else if(startGame == false)
         {
@@ -58,8 +61,39 @@ bool endOrStartGame(int outcome)
     return startGame;
 }
 
-int playGame()
+void playGame()
 {
     playerMap.playGame();
-    return 0;
 }
+
+void isNewHighScore(int & playerHighScore)
+{
+    std::cout<<"Evaluating your score!\n";
+    std::cout<<"Your score was "<<playerHighScore<<std::endl;
+
+    std::ifstream inFile;
+    inFile.open("highestscore.txt"); 
+    int highestScore;
+
+    inFile >> highestScore;
+
+    std::cout<<"The high score is "<<highestScore<<std::endl;
+    
+    if(playerHighScore > highestScore)
+    {
+        std::ofstream outFile("highestscore.txt");
+        outFile<<playerHighScore<<std::endl;
+        std::cout<<"Congrats you now have the highest score!\n";
+    }
+    else std::cout<<"Sorry, you did not get the highest score\n";
+    
+    inFile.close();
+
+}
+
+
+
+
+
+
+
