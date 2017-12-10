@@ -1,6 +1,7 @@
 # p04-Capstone
 
 ##Input/Output
+
 [message.cpp lines 18-21](/message.cpp#L10)
 I created outputs here to greet the player, and give them an option to play or quit the game. 
 
@@ -8,6 +9,7 @@ I created outputs here to greet the player, and give them an option to play or q
 I created an input here to recieve the player's choice.
 
 ##Control Flow
+
 [message.cpp lines 5-8](/message.cpp#L5)
 I use an if statement to see if the player picks a valid choice
 
@@ -18,6 +20,7 @@ I use an else statement to make my bool validChoice = ture when choice is either
 I use an else if statement here because in the case that the if statemnt above is false. I want to check if the player wanted to exit the game making startGame = false.
 
 ##Iteration
+
 [map.cpp lines 7-10](/map.cpp#L7)
 I use a for loop here to fill in the droneMap matrix with empty spaces to later fill in with strings.
 
@@ -25,6 +28,7 @@ I use a for loop here to fill in the droneMap matrix with empty spaces to later 
 I use a while loop here to make sure that only 15 drones are spawned into the map.
 
 ##Data Structure
+
 [map.h line 12](/map.h#12)
 I created a matrix variable (vector of vector of a droneMap) to represent a map of where the drones are because the map is a two dimensional grid with X and Y cordinates.
 
