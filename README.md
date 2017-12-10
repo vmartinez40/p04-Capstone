@@ -28,7 +28,7 @@ I created a matrix variable (vector of vector of a droneMap) to represent a map 
 [main.cpp lines 50-62](/main.cpp#L50)
 I created an endOrStart function that recieves the outcome of the player and returns a bool startGame. This is because I wanted to see if the player wants to play the game or not.
 [main.cpp lines 69-92](/main.cpp#69)
-I created a isNewHighScore function that pass by refrences int playerHighScore from the int main() because I want to 
+I created a isNewHighScore function that pass by refrences int playerHighScore from the int main() because I want to save memory when it pulls in the vaiable.
 
 ##File IO
 [main.cpp lines 74-90](/main.cpp#74)
